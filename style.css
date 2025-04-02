@@ -1,0 +1,78 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  background-color: #1a001a;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, p {
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #32004b;
+}
+
+.navbar button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.menu-button:hover {
+  transform: scale(1.1);
+}
+
+.item-container, .content {
+  margin: auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: rgba(50, 0, 75, 0.8);
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.item, .card {
+  background-color: #4e0073;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.item:hover, .card:hover {
+  background-color: #6a0dad;
+  transform: translateY(-3px);
+}
+
+button {
+  background-color: #ffcc00;
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #ffd633;
+  transform: scale(1.05);
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+  padding: 10px;
+  background-color: #32004b;
+}

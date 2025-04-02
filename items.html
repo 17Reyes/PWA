@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Items - Mictlan's Gate</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    .navbar {
+      position: relative;
+      background-color: #32004b;
+      padding: 10px;
+      color: white;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      font-family: 'Press Start 2P', cursive;
+    }
+
+    .menu-button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    #dropdown-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #32004b;
+      width: 250px;
+      height: 100vh;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+      font-family: 'Press Start 2P', cursive;
+    }
+
+    #dropdown-menu button {
+      display: block;
+      width: 100%;
+      margin: 15px 0;
+      background: #4e0073;
+      border: 2px solid #ffcc00;
+      color: white;
+      text-align: center;
+      font-size: 16px;
+      padding: 15px;
+      cursor: pointer;
+      transition: all 0.3s;
+      border-radius: 8px;
+      font-family: 'Press Start 2P', cursive;
+    }
+
+    #dropdown-menu button:hover {
+      background-color: #6a0dad;
+      transform: scale(1.05);
+      border-color: #ffd633;
+    }
+
+    .item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .item img {
+      width: 80px;
+      height: 80px;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .item img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 12px rgba(255, 255, 255, 0.5);
+      border-color: #ffcc00;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 20px;
+      font-family: 'Press Start 2P', cursive;
+    }
+
+    .item p {
+      margin: 0;
+      text-align: left;
+      text-indent: 20px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu-button {
+        font-size: 24px;
+      }
+
+      #dropdown-menu {
+        width: 200px;
+      }
+
+      #dropdown-menu button {
+        font-size: 14px;
+        padding: 12px;
+      }
+
+      .content {
+        margin-left: 0;
+        padding: 15px;
+      }
+
+      .item img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar {
+        padding: 5px;
+      }
+
+      .menu-button {
+        font-size: 20px;
+      }
+
+      #dropdown-menu {
+        width: 180px;
+      }
+
+      #dropdown-menu button {
+        font-size: 12px;
+        padding: 10px;
+      }
+
+      .content {
+        padding: 10px;
+      }
+
+      .item img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
+    <h2>Items</h2>
+    <div id="dropdown-menu" class="dropdown-content">
+      <button onclick="redirigir('index.html')">Home</button>
+      <button onclick="redirigir('personajes.html')">Personajes</button>
+      <button onclick="redirigir('items.html')">Items</button>
+      <button onclick="redirigir('mecanicas.html')">Mecánicas</button>
+      <button onclick="redirigir('escenarios.html')">Escenarios</button>
+      <button onclick="redirigir('nosotros.html')">Nosotros</button>
+    </div>
+  </div>
+  <div class="content">
+    <div class="item">
+      <img src="icons/fantasma.jpeg" alt="Pergamino">
+      <p>Habilidad: Incremento de puntuación<br>Nombre: Alma perdida<br>Descripción: Al recolectar un alma perdidad, honras a los caidos y restauras fragmentosdel equilibrio ancestral. Cada alma guía tu camino... y tu destino.</p>
+    </div>
+    <div class="item">
+      <img src="icons/Flecha.jpeg" alt="Lanza">
+      <p>Habilidad: Mejora de ataque<br>Nombre: Flecha del destino<br>Descripción: Con est aflecha se le otorga más fuerza de ataque</p>
+    </div>
+    <div class="item">
+      <img src="icons/cacao.jpeg" alt="Cofre">
+      <p>Habilidad: Salud<br>Nombre: cacao<br>Descripción: El cacao sirve para subir la salud de nuestro personaje por si recibe daño de cualquier enemigo.</p>
+    </div>
+  </div>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("dropdown-menu");
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+
+    function redirigir(ruta) {
+      window.location.href = ruta;
+    }
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>

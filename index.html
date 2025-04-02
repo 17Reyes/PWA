@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Home - Mictlan's Gate</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Press Start 2P', cursive;
+      background: linear-gradient(135deg, #32004b, #4e0073, #6a0dad);
+      color: white;
+    }
+
+    .navbar {
+      position: relative;
+      background-color: #32004b;
+      padding: 10px;
+      color: white;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: 'Press Start 2P', cursive;
+    }
+
+    .menu-button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    #dropdown-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #32004b;
+      width: 250px;
+      height: 100vh;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+      font-family: 'Press Start 2P', cursive;
+    }
+
+    #dropdown-menu button {
+      display: block;
+      width: 100%;
+      margin: 15px 0;
+      background: #4e0073;
+      border: 2px solid #ffcc00;
+      color: white;
+      text-align: center;
+      font-size: 16px;
+      padding: 15px;
+      cursor: pointer;
+      transition: all 0.3s;
+      border-radius: 8px;
+      font-family: 'Press Start 2P', cursive;
+    }
+
+    #dropdown-menu button:hover {
+      background-color: #6a0dad;
+      transform: scale(1.05);
+      border-color: #ffd633;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 20px;
+      text-align: center;
+      font-family: 'Press Start 2P', cursive;
+    }
+
+    .game-logo {
+      max-width: 60%;
+      height: auto;
+      margin: 20px auto;
+      display: block;
+      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+    }
+
+    p {
+      margin-top: 20px;
+      line-height: 1.5;
+    }
+
+    /* Responsividad */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu-button {
+        font-size: 24px;
+      }
+
+      #dropdown-menu {
+        width: 200px;
+      }
+
+      #dropdown-menu button {
+        font-size: 14px;
+        padding: 12px;
+      }
+
+      .content {
+        margin-left: 0;
+        padding: 15px;
+      }
+
+      .game-logo {
+        width: 80%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar {
+        padding: 5px;
+      }
+
+      .menu-button {
+        font-size: 20px;
+      }
+
+      #dropdown-menu {
+        width: 180px;
+      }
+
+      #dropdown-menu button {
+        font-size: 12px;
+        padding: 10px;
+      }
+
+      .content {
+        padding: 10px;
+      }
+
+      .game-logo {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
+    <h2>Premisa</h2>
+    <div id="dropdown-menu" class="dropdown-content">
+      <button onclick="redirigir('index.html')">Home</button>
+      <button onclick="redirigir('personajes.html')">Personajes</button>
+      <button onclick="redirigir('items.html')">Items</button>
+      <button onclick="redirigir('mecanicas.html')">Mecánicas</button>
+      <button onclick="redirigir('escenarios.html')">Escenarios</button>
+      <button onclick="redirigir('nosotros.html')"> Nosotros</button>
+    </div>
+  </div>
+  <div class="content">
+    <!-- Imagen centrada y destacada -->
+    <img src="icons/icon-513.png" alt="Logo Mictlan Gate" class="game-logo">
+    <p>Guía a Totchtli, un joven que ha perdido a su familia y su aldea
+      a manos de los Españoles, a través de los desafiantes niveles de la mitología
+      Azteca. Enfrenta enemigos del inframundo para recuperar las almas de sus
+      seres queridos y devolver la paz a su mundo</p>
+  </div>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("dropdown-menu");
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+
+    function redirigir(ruta) {
+      window.location.href = ruta;
+    }
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>
